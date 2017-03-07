@@ -22,7 +22,7 @@ Copyright (c) 2012-2013 Sasha Koss & Rico Sta. Cruz
       return $document.off('.turbo').on("" + load + ".turbo", this.onLoad).on("" + fetch + ".turbo", this.onFetch);
     },
     addCallback: function(callback) {
-      if ($.turbo.isReady) {
+      if ($.turbo.isReady && typeof callback != 'undefined') {
         callback($);
       }
       return $document.on('turbo:ready', function() {
