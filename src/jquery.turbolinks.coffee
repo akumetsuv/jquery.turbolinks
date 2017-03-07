@@ -22,7 +22,7 @@ $.turbo =
       .on("#{fetch}.turbo", @onFetch)
 
   addCallback: (callback) ->
-    if $.turbo.isReady
+    if $.turbo.isReady && callback?
       callback($)
     $document.on 'turbo:ready', -> callback($) if callback?
 
