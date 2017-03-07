@@ -26,7 +26,8 @@ Copyright (c) 2012-2013 Sasha Koss & Rico Sta. Cruz
         callback($);
       }
       return $document.on('turbo:ready', function() {
-        return callback($);
+        if(typeof callback != 'undefined')
+          return callback($);
       });
     },
     onLoad: function() {
